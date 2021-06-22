@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = (props) => {
+function Search ({ beginSort }) {
   return (
     <div className="d-flex justify-content-center mx-auto">
       <form>
@@ -9,7 +9,7 @@ const Search = (props) => {
           name="search"
           type="text"
           className="form-control-lg search-font mx-auto"
-          onChange={(event) => props.startSort(event)}
+          onChange={(event) => beginSort(event)}
         />
       </form>
     </div>

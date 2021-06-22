@@ -7,7 +7,7 @@ import "../style/directory.css";
 class Directory extends Component {
   state = {
     employees: [],
-    empSort: [],
+    employeeSort: [],
     search: "",
     sorted: false,
   };
@@ -21,33 +21,40 @@ class Directory extends Component {
   };
 
 
-  sortEmployees = () => {
+  sortIndex = () => {
     let { employees, search } = this.state;
-    let empSort = employees.filter((sorted) => {
+    let employeeSort = employees.filter((sorted) => {
       return (
         sorted.name.first.toLowerCase().includes(search.toLowerCase()) ||
         sorted.name.last.toLowerCase().includes(search.toLowerCase()) ||
         sorted.email.toLowerCase().includes(search.toLowerCase())
       );
     });
-    this.setState({ empSort });
+    this.setState({ employeeSort });
   };
 
 
-  startSort = (event) => {
+  beginSort = (event) => {
+    console.log(event.target.value);
+    const filter = event.target.value;
     this.setState({ search: event.target.value }, () => {
-      this.sortEmp();
+      this.state.employees.filter(item => {
+        let values = Object.values(item)
+        .join("")
+        .toLowerCase();
+      return values.indexOf(filter.toLowerCase()) !== -1;
+      });
       this.setState({ sorted: true });
     });
   };
 
   render = () => {
     return (
-      <div className="background">
+      <div className="bgColor">
         <div className="jumbotron jumbotron-fluid">
-          <h2 className="display-4">Employee Directory</h2>
+          <h2 className="h2">Employee Directory</h2>
           <p> Search for an employee by entering their name or email below.</p>
-          <Search name="search" startSort={this.startSort} label="Search" />
+          <Search name="search" beginSort={this.beginSort} label="Search" />
         </div>
 
         <div className="container-fluid">
@@ -75,7 +82,7 @@ class Directory extends Component {
                         dob={employee.dob.date}
                       />
                     )):
-                    this.state.empSort.map((employee) => (
+                    this.state.employeeSort.map((employee) => (
                       <Employees
                         key={employee.id.value}
                         fName={employee.name.first}
