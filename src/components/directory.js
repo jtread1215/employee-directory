@@ -1,10 +1,10 @@
-import React, { component } from "react";
-import employees from "./employees.js";
-import search from "./search.js";
+import React, { Component } from "react";
+import Employees from "./employees.js";
+import Search from "./search.js";
 import api from "../utils/api";
 import "../style/directory.css";
 
-class directory extends component {
+class Directory extends Component {
   state = {
     employees: [],
     empSort: [],
@@ -33,7 +33,7 @@ class directory extends component {
     this.setState({ empSort });
   };
 
-  // grab search term, activate sorted
+
   startSort = (event) => {
     this.setState({ search: event.target.value }, () => {
       this.sortEmp();
@@ -64,10 +64,9 @@ class directory extends component {
             </thead>
             <tbody>
               {
-                // If user has not entered any search input, sort employees by UUID
                 !this.state.sorted
                   ? this.state.employees.map((employee) => (
-                      <employees
+                      <Employees
                         key={employee.id.value}
                         firstName={employee.name.first}
                         lastName={employee.name.last}
@@ -87,10 +86,9 @@ class directory extends component {
                           employee.location.postcode
                         }
                       />
-                    ))
-                  : // sort users by UUID if the user has entered a search
+                    )):
                     this.state.empSort.map((employee) => (
-                      <employees
+                      <Employees
                         key={employee.id.value}
                         firstName={employee.name.first}
                         lastName={employee.name.last}
@@ -113,4 +111,4 @@ class directory extends component {
   };
 }
 
-export default directory;
+export default Directory;

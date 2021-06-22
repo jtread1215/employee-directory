@@ -1,6 +1,6 @@
 import React from "react";
 
-const search = (props) => {
+const Search = (props) => {
   return (
     <div className="d-flex justify-content-center mx-auto">
       <form>
@@ -16,4 +16,4 @@ const search = (props) => {
   );
 };
 
-export default search;
+export default Search;

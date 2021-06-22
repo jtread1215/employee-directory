@@ -1,6 +1,6 @@
 import React from "react";
 
-const employees = (props) => {
+const Employees = (props) => {
 
   function dateForm(date) {
     const arrDate = date.split("-");
@@ -30,4 +30,4 @@ const employees = (props) => {
   );
 };
 
-export default employees;
+export default Employees;
