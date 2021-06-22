@@ -1,11 +1,11 @@
 import React from "react";
-import directory from "./components/directory.js";
+import Directory from "./components/directory.js";
 import './App.css';
 
 const App = () => {
   return(
     <div className = "App">
-      <directory/>
+      <Directory/>
     </div>
   );
 };

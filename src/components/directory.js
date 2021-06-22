@@ -47,7 +47,7 @@ class Directory extends Component {
         <div className="jumbotron jumbotron-fluid">
           <h2 className="display-4">Employee Directory</h2>
           <p> Search for an employee by entering their name or email below.</p>
-          <search name="search" startSort={this.startSort} label="Search" />
+          <Search name="search" startSort={this.startSort} label="Search" />
         </div>
 
         <div className="container-fluid">
@@ -59,7 +59,6 @@ class Directory extends Component {
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Date of Birth</th>
-                <th>Address</th>
               </tr>
             </thead>
             <tbody>
@@ -68,38 +67,23 @@ class Directory extends Component {
                   ? this.state.employees.map((employee) => (
                       <Employees
                         key={employee.id.value}
-                        firstName={employee.name.first}
-                        lastName={employee.name.last}
+                        fName={employee.name.first}
+                        lName={employee.name.last}
                         phone={employee.phone}
                         email={employee.email}
                         icon={employee.picture.medium}
                         dob={employee.dob.date}
-                        address={
-                          employee.location.street.number +
-                          " " +
-                          employee.location.street.name +
-                          ", " +
-                          employee.location.city +
-                          ", " +
-                          employee.location.state +
-                          " " +
-                          employee.location.postcode
-                        }
                       />
                     )):
                     this.state.empSort.map((employee) => (
                       <Employees
                         key={employee.id.value}
-                        firstName={employee.name.first}
-                        lastName={employee.name.last}
+                        fName={employee.name.first}
+                        lName={employee.name.last}
                         phone={employee.phone}
                         email={employee.email}
                         icon={employee.picture.medium}
-                        dob={employee.dob.date}
-                        address={
-                          employee.location.street.number +
-                          employee.location.street.name
-                        }
+                        dob={employee.dob.date}                        
                       />
                     ))
               }
