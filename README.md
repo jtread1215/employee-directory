@@ -14,6 +14,7 @@ This application was built by implemententing the following technologies:
     Random User API - https://randomuser.me/
 
 # Visuals
+Search employee page.
 
 
 # Links
