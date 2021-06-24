@@ -15,6 +15,7 @@ This application was built by implemententing the following technologies:
 
 # Visuals
 Search employee page.
+![image](https://user-images.githubusercontent.com/77247419/123277434-1a0ac200-d4d4-11eb-9ecb-61cf5dd97027.png)
 
 
 # Links
