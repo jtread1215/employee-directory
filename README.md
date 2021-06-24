@@ -19,7 +19,7 @@ Search employee page.
 
 
 # Links
-GitHub:
+GitHub:https://jtread1215.github.io/employee-directory/
 
 
 # Getting Started with Create React App
