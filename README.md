@@ -1,3 +1,25 @@
+# Employee Directory
+
+# Description 
+This application can be used by employers to allow them to easily access their employee's contact information by simply typing in their name and selecting search. 
+
+# Technologies
+This application was built by implemententing the following technologies:
+    React
+    HTML
+    CSS
+    Bootstrap
+    NodeJS
+    JavaScript
+    Random User API - https://randomuser.me/
+
+# Visuals
+
+
+# Links
+GitHub:
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
